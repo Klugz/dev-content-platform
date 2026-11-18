@@ -1,0 +1,74 @@
+generator client {
+ provider = "prisma-client"
+ output = "../generated/prisma"
+}
+datasource db {
+ provider = "postgresql"
+}
+model Category {
+ id String @id @default(cuid())
+ name String @unique
+ description String @default("")
+ contents Content[]
+}
+model Content {
+ id String @id @default(cuid())
+ title String
+ description String
+ url String
+ source String
+ level String
+ format String
+ minutes Int
+ published Boolean @default(false)
+ categoryId String
+ category Category @relation(fields:[categoryId], references:[id], onDelete:Restrict)
+ steps TrailStep[]
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+}
+model Trail {
+ id String @id @default(cuid())
+ title String
+ description String
+ level String
+ published Boolean @default(false)
+ steps TrailStep[]
+ updatedAt DateTime @updatedAt
+}
+model TrailStep {
+ id String @id @default(cuid())
+ trailId String
+ contentId String
+ position Int
+ trail Trail @relation(fields:[trailId], references:[id], onDelete:Cascade)
+ content Content @relation(fields:[contentId], references:[id], onDelete:Restrict)
+ @@unique([trailId, contentId])
+ @@unique([trailId, position])
+}
+model Settings {
+ id String @id @default("site")
+ feedbackUrl String @default("")
+}
+model Admin {
+ id String @id @default(cuid())
+ email String @unique
+ passwordHash String
+ sessions Session[]
+}
+model Session {
+ tokenHash String @id
+ adminId String
+ admin Admin @relation(fields:[adminId], references:[id], onDelete:Cascade)
+ expiresAt DateTime
+ @@index([expiresAt])
+}
+model LoginAttempt {
+ key String @id
+ count Int @default(0)
+ expiresAt DateTime
+}
+model SeedRun {
+ id String @id
+ createdAt DateTime @default(now())
+}

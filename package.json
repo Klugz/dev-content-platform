@@ -1,0 +1,48 @@
+{
+  "name": "dev-content-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "prisma generate && next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "test:db": "tsx scripts/test-db.ts",
+    "test:http": "tsx scripts/test-http.ts",
+    "preview:test": "tsx scripts/preview.ts",
+    "format": "prettier --write app components lib prisma scripts tests *.ts *.json README.md"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "@prisma/client": "7.10.0",
+    "@prisma/adapter-pg": "7.10.0",
+    "pg": "8.16.3",
+    "dotenv": "17.2.3",
+    "zod": "3.25.76",
+    "lucide-react": "^1.31.0",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "^24",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/pg": "8.15.6",
+    "prisma": "7.10.0",
+    "tsx": "4.20.6",
+    "embedded-postgres": "18.1.0-beta.16",
+    "prettier": "3.6.2"
+  },
+  "packageManager": "pnpm@11.25.0"
+}
