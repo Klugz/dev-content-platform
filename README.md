@@ -11,7 +11,8 @@ Plataforma de curadoria de conteúdos gratuitos de programação, desenvolvida c
 - Rascunhos não aparecem no catálogo. Uma trilha publicada exige etapas publicadas. Materiais vinculados não podem ser excluídos sem remover os vínculos.
 - Link de feedback Google Forms configurável no painel, na página Sobre.
 - Interface responsiva em português, labels acessíveis, navegação por teclado e estados vazios/erros.
-- Apenas **um material de teste**, uma categoria e uma trilha de teste no seed opcional.
+- Catálogo selecionado com **11 cursos, 7 categorias e 7 trilhas**, em português e com conteúdo gratuito. Critérios e ressalvas em [Curadoria](docs/CURADORIA.md).
+- Seed de uma amostra técnica separado, apenas para testes.
 
 Não há cadastro de estudantes ou coleta de dados pessoais para navegar. O questionário é externo e administrado pelo responsável pelo projeto. O nome Trilha.dev é uma identidade provisória; não representa domínio registrado.
 
@@ -26,7 +27,7 @@ pnpm db:generate
 pnpm dev
 ```
 
-Abra http://localhost:3000. Com `DEMO_MODE=true` e sem `DATABASE_URL`, o catálogo exibe uma prévia somente de leitura com o material de teste. A administração exige um banco real. Erros em uma conexão configurada são exibidos como falhas, nunca substituídos por dados de demonstração.
+Abra http://localhost:3000. Com `DEMO_MODE=true` e sem `DATABASE_URL`, o catálogo exibe uma prévia somente de leitura com os 11 cursos selecionados. A administração exige um banco real. Erros em uma conexão configurada são exibidos como falhas, nunca substituídos por dados de demonstração.
 
 ## Conectar ao Supabase
 
@@ -37,8 +38,8 @@ Abra http://localhost:3000. Com `DEMO_MODE=true` e sem `DATABASE_URL`, o catálo
 
 ```sh
 pnpm db:deploy
-# Opcional, uma única amostra para testar:
-pnpm db:seed
+# Importar os cursos selecionados e suas trilhas:
+pnpm db:curate
 ```
 
 5. Defina `ADMIN_EMAIL` e `ADMIN_PASSWORD` (mínimo de 12 caracteres) no ambiente local e execute:
@@ -51,7 +52,7 @@ Remova `ADMIN_PASSWORD` do ambiente após a criação. O comando cria uma conta;
 
 6. Defina `DEMO_MODE=false`, inicie a aplicação e acesse `/admin`. Cadastre categorias, materiais e trilhas. Configure o link do Google Forms em **Configurações**.
 
-O seed tem um marcador transacional: executá-lo novamente preserva edições e exclusões. Não existe seed automático em build, startup ou deploy. As migrations são versionadas; não use `db push` ou reset em produção.
+A importação `db:curate` tem um marcador transacional: executá-lo novamente preserva edições e exclusões. Categorias existentes com o mesmo nome são reaproveitadas sem sobrescrever descrições. Registros existentes são preservados, inclusive a amostra antiga se ela já tiver sido inserida. Colisões de IDs abortam toda a importação. Para bancos de teste, `db:seed` continua inserindo somente a amostra técnica. Não existe importação ou seed automático em build, startup ou deploy. As migrations são versionadas; não use `db push` ou reset em produção.
 
 ## Publicar na Vercel
 

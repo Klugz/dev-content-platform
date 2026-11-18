@@ -131,6 +131,9 @@ export default async function Home() {
                 const Icon = [CodeXml, Braces, Database, GitBranch, Terminal][
                   i % 5
                 ];
+                const count = data.contents.filter(
+                  (c) => c.categoryId === cat.id,
+                ).length;
                 return (
                   <Link
                     className="category-card"
@@ -140,11 +143,11 @@ export default async function Home() {
                     <Icon size={27} />
                     <h3>{cat.name}</h3>
                     <span>
-                      {
-                        data.contents.filter((c) => c.categoryId === cat.id)
-                          .length
-                      }{" "}
-                      material disponível <ArrowUp />
+                      {count}{" "}
+                      {count === 1
+                        ? "material disponível"
+                        : "materiais disponíveis"}{" "}
+                      <ArrowUp />
                     </span>
                   </Link>
                 );

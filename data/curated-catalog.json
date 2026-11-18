@@ -1,0 +1,237 @@
+{
+  "reviewedAt": "2026-11-18",
+  "categories": [
+    {
+      "id": "curated-category-1",
+      "name": "Fundamentos de programação",
+      "description": "Cursos estruturados de fundamentos de programação."
+    },
+    {
+      "id": "curated-category-2",
+      "name": "Desenvolvimento web",
+      "description": "Cursos estruturados de desenvolvimento web."
+    },
+    {
+      "id": "curated-category-3",
+      "name": "Back-end",
+      "description": "Cursos estruturados de back-end."
+    },
+    {
+      "id": "curated-category-4",
+      "name": "Banco de dados",
+      "description": "Cursos estruturados de banco de dados."
+    },
+    {
+      "id": "curated-category-5",
+      "name": "Inteligência artificial",
+      "description": "Cursos estruturados de inteligência artificial."
+    },
+    {
+      "id": "curated-category-6",
+      "name": "Computação em nuvem",
+      "description": "Cursos estruturados de computação em nuvem."
+    },
+    {
+      "id": "curated-category-7",
+      "name": "Desenvolvimento de jogos",
+      "description": "Cursos estruturados de desenvolvimento de jogos."
+    }
+  ],
+  "contents": [
+    {
+      "id": "curated-algoritmos",
+      "title": "Algoritmos: lógica de programação do zero",
+      "description": "Comece por variáveis, decisões e repetições em uma sequência de aulas e exercícios de lógica. Conclua resolvendo os desafios do curso. Não exige experiência. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/curso-de-algoritmo/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-1"
+    },
+    {
+      "id": "curated-python",
+      "title": "Python 3: Mundo 1 — fundamentos",
+      "description": "Primeiro módulo completo de Python: instalação, primeiros programas, tipos, operações e desafios progressivos. Conclua os exercícios antes de avançar aos próximos mundos. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/python-3-mundo-1/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-1"
+    },
+    {
+      "id": "curated-discover",
+      "title": "Discover: seu primeiro site",
+      "description": "Sete módulos com fundamentos de HTML, CSS, JavaScript, Git e apoio de IA. O percurso termina com um site de links próprio. Para iniciantes; requer cadastro gratuito. Certificado gratuito.",
+      "source": "Rocketseat · Mayk Brito",
+      "url": "https://www.rocketseat.com.br/discover",
+      "minutes": 360,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-2"
+    },
+    {
+      "id": "curated-html-css",
+      "title": "HTML5 e CSS3: módulo 1",
+      "description": "Módulo completo para entender a web, preparar o editor e construir páginas com texto, imagens e estilos. Inclui aulas ordenadas, PDFs e exercícios; é o início de uma série de cinco módulos. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/html5-css3-modulo1/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-2"
+    },
+    {
+      "id": "curated-java",
+      "title": "Java Básico: primeiros programas",
+      "description": "Sequência de fundamentos de Java, da instalação a variáveis, decisões, laços, vetores e métodos. Faça os exercícios antes de estudar APIs. As telas de IDE e as aulas de interfaces gráficas usam ferramentas da época da gravação. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/java-basico/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-3"
+    },
+    {
+      "id": "curated-spring",
+      "title": "Java com Spring Boot: API de tarefas",
+      "description": "Projeto guiado com 29 aulas para construir uma API de tarefas: rotas, validação, banco e autenticação. Recomendamos fundamentos de Java antes de começar. Cadastro gratuito; 7h de estudo estimadas pela fonte. O deploy externo é opcional e pode ter condições próprias.",
+      "source": "Rocketseat",
+      "url": "https://app.rocketseat.com.br/journey/java-com-spring-boot-curso-introdutorio/overview",
+      "minutes": 420,
+      "level": "Intermediário",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-3"
+    },
+    {
+      "id": "curated-php",
+      "title": "PHP Moderno: módulo 1",
+      "description": "Módulo com sequência definida e desafios: ambiente PHP, variáveis, tipos, strings, cálculos e formulários HTML. Recomendamos lógica e noções de HTML. Conclua implementando os desafios de tratamento de dados. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/curso-de-php-moderno-modulo-01/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-3"
+    },
+    {
+      "id": "curated-mysql",
+      "title": "MySQL: fundamentos de bancos relacionais",
+      "description": "Aprenda a criar tabelas, inserir e consultar dados, relacionar informações e usar JOINs em uma sequência de aulas e exercícios. As telas de instalação podem diferir das versões atuais. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo · Gustavo Guanabara",
+      "url": "https://www.cursoemvideo.com/curso/mysql/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-4"
+    },
+    {
+      "id": "curated-ia",
+      "title": "Inteligência Artificial: módulo 1",
+      "description": "Percurso introdutório com conceitos de IA, prompts, atividades práticas, vieses e verificação de respostas. Para entender e usar IA com senso crítico; não é um curso de treinamento de modelos. Ferramentas demonstradas podem oferecer planos pagos opcionais. Aulas gratuitas; certificado opcional pago.",
+      "source": "Curso em Vídeo",
+      "url": "https://www.cursoemvideo.com/curso/curso-gratis-de-inteligencia-artificial/",
+      "minutes": 2400,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-5"
+    },
+    {
+      "id": "curated-cloud",
+      "title": "Nuvem: conceitos, benefícios e tipos de serviço",
+      "description": "Roteiro oficial em PT-BR com três módulos, leituras e avaliações: computação em nuvem, benefícios e IaaS/PaaS/SaaS. O percurso conceitual pode ser concluído sem contratar serviços Azure. Exames de certificação e laboratórios externos não estão incluídos.",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/pt-br/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts",
+      "minutes": 56,
+      "level": "Iniciante",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-6"
+    },
+    {
+      "id": "curated-godot",
+      "title": "Godot: construa um jogo 2D de nave",
+      "description": "Sequência de 21 videoaulas em PT-BR, com exercícios, da criação do projeto a inimigos, colisões, pontuação e controles mobile. Requer lógica básica. Material de uma versão antiga da Godot: acompanhe a versão mostrada nas aulas; não é uma formação em Godot 4. Conteúdo e certificado gratuitos segundo a plataforma.",
+      "source": "Papai Game Maker · Cursa",
+      "url": "https://cursa.app/pt/curso-gratuito/desenvolvimento-de-jogos-usando-godot-bddd",
+      "minutes": 479,
+      "level": "Intermediário",
+      "format": "Curso",
+      "published": true,
+      "categoryId": "curated-category-7"
+    }
+  ],
+  "trails": [
+    {
+      "id": "curated-trail-comecar",
+      "title": "Comece a programar",
+      "description": "Da lógica aos primeiros programas em Python. Resolva os exercícios de cada curso antes de seguir.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-algoritmos", "curated-python"]
+    },
+    {
+      "id": "curated-trail-web",
+      "title": "Construa seu primeiro site",
+      "description": "Crie um primeiro projeto no Discover e aprofunde a base de HTML e CSS no módulo completo do Guanabara.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-discover", "curated-html-css"]
+    },
+    {
+      "id": "curated-trail-java",
+      "title": "Da lógica à primeira API em Java",
+      "description": "Comece pela lógica, estude os fundamentos de Java e bancos relacionais e finalize construindo uma API de tarefas.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": [
+        "curated-algoritmos",
+        "curated-java",
+        "curated-mysql",
+        "curated-spring"
+      ]
+    },
+    {
+      "id": "curated-trail-php",
+      "title": "Primeiros passos no back-end com PHP",
+      "description": "Depois de conhecer lógica básica, aprenda HTML, pratique formulários com PHP e entenda bancos relacionais.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-html-css", "curated-php", "curated-mysql"]
+    },
+    {
+      "id": "curated-trail-cloud",
+      "title": "Entenda a computação em nuvem",
+      "description": "Um percurso curto e completo de conceitos, com três módulos e avaliações, sem precisar contratar infraestrutura.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-cloud"]
+    },
+    {
+      "id": "curated-trail-ia",
+      "title": "Entenda e use IA com senso crítico",
+      "description": "Siga o módulo introdutório completo e pratique a elaboração de prompts e a verificação de respostas.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-ia"]
+    },
+    {
+      "id": "curated-trail-jogos",
+      "title": "Da lógica ao primeiro jogo 2D",
+      "description": "Pratique lógica e construa um jogo de nave. O projeto Godot usa uma versão antiga: siga o ambiente das aulas, não Godot 4.",
+      "level": "Iniciante",
+      "published": true,
+      "contentIds": ["curated-algoritmos", "curated-godot"]
+    }
+  ]
+}

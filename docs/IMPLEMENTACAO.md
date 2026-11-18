@@ -6,21 +6,21 @@ A solicitação de gestão do conteúdo pela própria plataforma resultou em uma
 
 ## Critérios atendidos
 
-| Necessidade | Implementação |
-| --- | --- |
-| Conteúdos organizados | Catálogo, busca e filtros combinados |
-| Diferentes conhecimentos | Níveis iniciante, intermediário e avançado |
-| Diversidade de materiais | Curso, vídeo, documentação, exercício e tutorial |
-| Orientação de estudo | Trilhas com etapas ordenáveis |
-| Conteúdos nas fontes | Link HTTP/HTTPS externo com nova aba |
-| Curadoria pela plataforma | CRUD protegido, rascunhos e publicação |
-| Avaliação pelos participantes | Link configurável do Google Forms na página Sobre |
-| Dados mínimos para testar | Um único material, categoria e trilha de teste |
-| Hospedagem futura | Next.js para Vercel, PostgreSQL Supabase com Prisma |
+| Necessidade                   | Implementação                                                           |
+| ----------------------------- | ----------------------------------------------------------------------- |
+| Conteúdos organizados         | Catálogo, busca e filtros combinados                                    |
+| Diferentes conhecimentos      | Níveis iniciante, intermediário e avançado                              |
+| Diversidade de materiais      | Curso, vídeo, documentação, exercício e tutorial                        |
+| Orientação de estudo          | Trilhas com etapas ordenáveis                                           |
+| Conteúdos nas fontes          | Link HTTP/HTTPS externo com nova aba                                    |
+| Curadoria pela plataforma     | CRUD protegido, rascunhos e publicação                                  |
+| Avaliação pelos participantes | Link configurável do Google Forms na página Sobre                       |
+| Catálogo inicial aprovado     | 11 cursos estruturados, 7 categorias e 7 trilhas; seed técnico separado |
+| Hospedagem futura             | Next.js para Vercel, PostgreSQL Supabase com Prisma                     |
 
 ## Configuração externa pendente
 
-A conexão ao Supabase e o deploy na Vercel serão realizados posteriormente, conforme solicitado. Nenhum projeto de banco ou hospedagem foi provisionado. O README contém os comandos para migrations, seed opcional e criação do administrador.
+A conexão ao Supabase e o deploy na Vercel serão realizados posteriormente, conforme solicitado. Nenhum projeto de banco ou hospedagem foi provisionado. O README contém os comandos para migrations, importação do catálogo aprovado e criação do administrador.
 
 ## Verificação
 

@@ -1,17 +1,10 @@
 import "server-only";
 import { db } from "./db";
-import { demoCategory, demoContent, demoTrail } from "./demo";
+import { curatedCatalog } from "./curated";
 export const isDemo = () =>
   process.env.DEMO_MODE === "true" && !process.env.DATABASE_URL;
 export async function catalog() {
-  if (isDemo())
-    return {
-      categories: [demoCategory],
-      contents: [demoContent],
-      trails: [demoTrail],
-      feedbackUrl: "",
-      demo: true,
-    };
+  if (isDemo()) return curatedCatalog();
   const [categories, contents, trails, settings] = await Promise.all([
     db().category.findMany({ orderBy: { name: "asc" } }),
     db().content.findMany({

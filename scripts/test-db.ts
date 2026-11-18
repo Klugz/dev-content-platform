@@ -53,13 +53,65 @@ try {
   await assert.rejects(db.content.delete({ where: { id: "demo-html" } }));
   await db.trail.delete({ where: { id: "demo-trail" } });
   assert.equal(await db.trailStep.count(), 0);
+  const existingCategory = await db.category.create({
+    data: {
+      id: "existing-fundamentals",
+      name: "Fundamentos de programação",
+      description: "Descrição escrita pelo administrador",
+    },
+  });
+  execFileSync("node_modules/.bin/tsx", ["prisma/curate.ts"], {
+    env,
+    stdio: "pipe",
+  });
+  assert.equal(await db.content.count(), 12);
+  assert.equal(await db.trail.count(), 7);
+  assert.equal(
+    (await db.content.findUniqueOrThrow({ where: { id: "curated-python" } }))
+      .categoryId,
+    existingCategory.id,
+  );
+  assert.equal(
+    (
+      await db.category.findUniqueOrThrow({
+        where: { id: existingCategory.id },
+      })
+    ).description,
+    "Descrição escrita pelo administrador",
+  );
+  await db.content.update({
+    where: { id: "curated-python" },
+    data: { title: "Título revisado", published: false },
+  });
+  await db.trail.delete({ where: { id: "curated-trail-jogos" } });
+  await db.content.delete({ where: { id: "curated-godot" } });
+  execFileSync("node_modules/.bin/tsx", ["prisma/curate.ts"], {
+    env,
+    stdio: "pipe",
+  });
+  assert.equal(await db.content.count(), 11);
+  assert.equal(await db.trail.count(), 6);
+  assert.equal(
+    (await db.content.findUniqueOrThrow({ where: { id: "curated-python" } }))
+      .title,
+    "Título revisado",
+  );
+  assert.equal(
+    (await db.content.findUniqueOrThrow({ where: { id: "curated-python" } }))
+      .published,
+    false,
+  );
+  assert.equal(
+    await db.content.findUnique({ where: { id: "curated-godot" } }),
+    null,
+  );
   const tables = await db.$queryRaw<
     { relrowsecurity: boolean }[]
   >`SELECT relrowsecurity FROM pg_class WHERE relname IN ('Admin','Session','Content','Trail','Category','Settings','LoginAttempt','SeedRun','TrailStep')`;
   assert.equal(tables.length, 9);
   assert.ok(tables.every((t) => t.relrowsecurity));
   console.log(
-    "PASS: migrations, seed idempotency, preserved edits, foreign keys, cascade, RLS.",
+    "PASS: migrations, seed idempotency, preserved edits/deletions, curated import and category reuse, foreign keys, cascade, RLS.",
   );
 } finally {
   await db?.$disconnect();

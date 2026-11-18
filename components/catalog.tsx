@@ -109,7 +109,7 @@ export function Empty({
 export function DemoNotice() {
   return (
     <div className="demo-note">
-      Prévia da plataforma · apenas um material de teste · alterações
+      Catálogo selecionado · prévia sem banco conectado · alterações
       administrativas disponíveis após conectar o banco.
     </div>
   );
