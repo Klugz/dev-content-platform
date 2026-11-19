@@ -26,13 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               trilha<span className="brand-dot">.dev</span>
             </Link>
             <nav aria-label="Navegação principal">
-              <Link href="/conteudos">Explorar conteúdos</Link>
+              <Link href="/">Início</Link>
+              <Link href="/conteudos">Todos os conteúdos</Link>
               <Link href="/trilhas">Trilhas de aprendizagem</Link>
               <Link href="/sobre">Sobre o projeto</Link>
             </nav>
-            <Link className="nav-action" href="/conteudos">
-              Começar a aprender <ArrowUpRight size={17} />
-            </Link>
           </div>
         </header>
         <main id="main">{children}</main>

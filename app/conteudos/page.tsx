@@ -32,7 +32,7 @@ export default async function Contents({
     <div className="container page">
       {data.demo && <DemoNotice />}
       <p className="eyebrow">SUA BIBLIOTECA ABERTA</p>
-      <h1>Explore conteúdos.</h1>
+      <h1>Todos os conteúdos.</h1>
       <p className="lead">
         Um novo conhecimento pode ser o começo de muitas possibilidades.
       </p>

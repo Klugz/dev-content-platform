@@ -15,7 +15,7 @@ export default async function Detail({
   return (
     <div className="container page narrow">
       <Link className="back" href="/conteudos">
-        <ArrowLeft size={16} /> Explorar conteúdos
+        <ArrowLeft size={16} /> Todos os conteúdos
       </Link>
       <div className="detail">
         <p className="eyebrow">{c.category.name}</p>

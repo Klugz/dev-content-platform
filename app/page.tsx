@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Search,
   CodeXml,
   Braces,
   Terminal,
@@ -10,7 +9,6 @@ import {
   Sparkles,
   BookOpen,
   Compass,
-  Route,
 } from "lucide-react";
 import { catalog } from "@/lib/catalog";
 import {
@@ -40,18 +38,6 @@ export default async function Home() {
               <br className="desktop" /> organizados para você encontrar seu
               caminho.
             </p>
-            <form action="/conteudos" className="hero-search">
-              <Search size={21} />
-              <input
-                name="q"
-                aria-label="O que você quer aprender?"
-                placeholder="O que você quer aprender?"
-                maxLength={100}
-              />
-              <button aria-label="Buscar conteúdos">
-                <ArrowRight size={21} />
-              </button>
-            </form>
             <div className="hero-foot">
               <span>
                 <span className="check">✓</span> 100% gratuito
