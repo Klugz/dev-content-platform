@@ -30,7 +30,7 @@ try {
     stdio: "pipe",
   });
   db = new PrismaClient({ adapter: new PrismaPg({ connectionString: url }) });
-  execFileSync("node_modules/.bin/tsx", ["prisma/seed.ts"], {
+  execFileSync("node_modules/.bin/tsx", ["prisma/seed-sample.ts"], {
     env,
     stdio: "pipe",
   });
@@ -40,7 +40,7 @@ try {
     where: { id: "demo-html" },
     data: { title: "Editado pelo administrador" },
   });
-  execFileSync("node_modules/.bin/tsx", ["prisma/seed.ts"], {
+  execFileSync("node_modules/.bin/tsx", ["prisma/seed-sample.ts"], {
     env,
     stdio: "pipe",
   });
@@ -60,7 +60,7 @@ try {
       description: "Descrição escrita pelo administrador",
     },
   });
-  execFileSync("node_modules/.bin/tsx", ["prisma/curate.ts"], {
+  execFileSync("node_modules/.bin/tsx", ["prisma/seed.ts"], {
     env,
     stdio: "pipe",
   });

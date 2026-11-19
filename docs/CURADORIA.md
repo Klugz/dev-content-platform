@@ -2,7 +2,7 @@
 
 Seleção aprovada pelo usuário para ampliar o catálogo inicial. Foram priorizados conteúdos em PT-BR com acesso gratuito, sequência definida e conclusão de um módulo ou projeto. Curso modular está identificado como módulo, sem sugerir que cobre uma formação inteira. Não foram cadastradas páginas genéricas de canais, eventos encerrados ou playlists sem um percurso definido.
 
-O conjunto compartilhado entre prévia e importação está em `data/curated-catalog.json`. O comando `pnpm db:curate` importa os cursos e trilhas no PostgreSQL configurado. Sem banco, a prévia já apresenta os mesmos cursos; isso não representa persistência no Supabase.
+O conjunto compartilhado entre prévia e importação está em `data/curated-catalog.json`. O comando `pnpm db:seed` (ou o alias compatível `pnpm db:curate`) importa os cursos e trilhas no PostgreSQL configurado. Sem banco, a prévia já apresenta os mesmos cursos; isso não representa persistência no Supabase.
 
 ## Seleção e evidências
 

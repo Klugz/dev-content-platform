@@ -20,7 +20,8 @@
     "test:http": "tsx scripts/test-http.ts",
     "preview:test": "tsx scripts/preview.ts",
     "format": "prettier --write app components lib prisma scripts tests *.ts *.json README.md",
-    "db:curate": "tsx prisma/curate.ts"
+    "db:curate": "tsx prisma/curate.ts",
+    "db:seed:sample": "tsx prisma/seed-sample.ts"
   },
   "dependencies": {
     "next": "16.3.4",

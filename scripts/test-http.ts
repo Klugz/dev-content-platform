@@ -90,7 +90,7 @@ try {
   };
   for (const [bin, args] of [
     ["prisma", ["migrate", "deploy"]],
-    ["tsx", ["prisma/seed.ts"]],
+    ["tsx", ["prisma/seed-sample.ts"]],
     ["tsx", ["scripts/create-admin.ts"]],
   ] as const)
     execFileSync(`node_modules/.bin/${bin}`, [...args], { env, stdio: "pipe" });

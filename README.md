@@ -39,7 +39,7 @@ Abra http://localhost:3000. Com `DEMO_MODE=true` e sem `DATABASE_URL`, o catálo
 ```sh
 pnpm db:deploy
 # Importar os cursos selecionados e suas trilhas:
-pnpm db:curate
+pnpm db:seed
 ```
 
 5. Defina `ADMIN_EMAIL` e `ADMIN_PASSWORD` (mínimo de 12 caracteres) no ambiente local e execute:
@@ -52,7 +52,7 @@ Remova `ADMIN_PASSWORD` do ambiente após a criação. O comando cria uma conta;
 
 6. Defina `DEMO_MODE=false`, inicie a aplicação e acesse `/admin`. Cadastre categorias, materiais e trilhas. Configure o link do Google Forms em **Configurações**.
 
-A importação `db:curate` tem um marcador transacional: executá-lo novamente preserva edições e exclusões. Categorias existentes com o mesmo nome são reaproveitadas sem sobrescrever descrições. Registros existentes são preservados, inclusive a amostra antiga se ela já tiver sido inserida. Colisões de IDs abortam toda a importação. Para bancos de teste, `db:seed` continua inserindo somente a amostra técnica. Não existe importação ou seed automático em build, startup ou deploy. As migrations são versionadas; não use `db push` ou reset em produção.
+O comando `db:seed` (também disponível como `db:curate`) tem um marcador transacional: executá-lo novamente preserva edições e exclusões. Categorias existentes com o mesmo nome são reaproveitadas sem sobrescrever descrições. Registros existentes são preservados, inclusive a amostra antiga se ela já tiver sido inserida. Colisões de IDs abortam toda a importação. Para bancos de teste, `db:seed:sample` insere somente a amostra técnica. O seed padrão não cria administradores; use `pnpm admin:create` separadamente. Não existe importação ou seed automático em build, startup ou deploy. As migrations são versionadas; não use `db push` ou reset em produção.
 
 ## Publicar na Vercel
 
