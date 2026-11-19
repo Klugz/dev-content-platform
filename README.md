@@ -89,3 +89,9 @@ Para inspeção manual com uma base descartável: `pnpm preview:test`. Abra http
 - `tests/`: regras de validação e senhas.
 
 Arquitetura baseada na documentação oficial de [Next.js Authentication](https://nextjs.org/docs/app/guides/authentication), [Prisma com driver PostgreSQL](https://www.prisma.io/docs/orm/v7/core-concepts/supported-databases/database-drivers) e [Prisma no Supabase](https://supabase.com/docs/guides/database/prisma).
+
+## Feedback dos alunos
+
+A página `/feedback` recebe comentários sobre a plataforma ou um conteúdo publicado, sem cadastro e com nome opcional. As mensagens são privadas e podem ser lidas em `/admin/feedback`, com paginação. O envio tem validação, campo antispam e limite de cinco tentativas por endereço de rede a cada 15 minutos. No modo demonstrativo, o envio fica desabilitado.
+
+Antes de publicar esta versão, execute `pnpm db:deploy` usando a conexão de migrations para criar `StudentFeedback`. A migration protege a tabela com RLS e concede SELECT/INSERT ao papel `trilha_app`, caso já exista. Se usar outro papel de aplicação com privilégios restritos, conceda essas mesmas permissões na nova tabela. Não é necessário executar o seed novamente.

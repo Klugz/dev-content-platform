@@ -67,3 +67,19 @@ export const feedbackSchema = z.union([
     "Use um endereço do Google Forms.",
   ),
 ]);
+
+export const studentFeedbackSchema = z
+  .object({
+    name: z.string().trim().max(80, "Use até 80 caracteres no nome."),
+    topic: z.enum(["platform", "content"]),
+    contentId: z.string().max(100),
+    message: z
+      .string()
+      .trim()
+      .min(10, "Escreva pelo menos 10 caracteres.")
+      .max(2000, "Use até 2.000 caracteres."),
+  })
+  .refine(
+    (v) => v.topic !== "content" || !!v.contentId,
+    "Selecione o conteúdo que deseja comentar.",
+  );

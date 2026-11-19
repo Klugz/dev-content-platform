@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { catalog } from "@/lib/catalog";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 export const dynamic = "force-dynamic";
@@ -44,6 +45,9 @@ export default async function About() {
           Conte o que achou da organização, da facilidade de uso e dos
           materiais.
         </p>
+        <Link className="button" href="/feedback">
+          Deixar um comentário
+        </Link>
         {feedbackUrl ? (
           <a
             href={feedbackUrl}
@@ -53,11 +57,7 @@ export default async function About() {
           >
             Responder questionário <ArrowUpRight size={17} />
           </a>
-        ) : (
-          <p className="muted">
-            O questionário de feedback será disponibilizado em breve.
-          </p>
-        )}
+        ) : null}
       </section>
     </div>
   );

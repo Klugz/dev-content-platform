@@ -30,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/conteudos">Todos os conteúdos</Link>
               <Link href="/trilhas">Trilhas de aprendizagem</Link>
               <Link href="/sobre">Sobre o projeto</Link>
+              <Link href="/feedback">Feedback</Link>
             </nav>
           </div>
         </header>

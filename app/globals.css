@@ -1314,3 +1314,23 @@ legend {
     scroll-behavior: auto !important;
   }
 }
+
+.feedback-trap {
+  display: none;
+}
+.feedback-entry {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.feedback-entry h2 {
+  font-size: 20px;
+}
+.feedback-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.nav nav {
+  flex-wrap: wrap;
+}

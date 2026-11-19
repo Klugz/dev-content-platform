@@ -132,6 +132,59 @@ try {
     await (await get("/conteudos?q=html&nivel=Iniciante")).text(),
     /Seu primeiro passo com HTML/,
   );
+  assert.match(
+    await (await get("/admin/feedback", false)).text(),
+    /NEXT_REDIRECT.*admin\/login/,
+  );
+  for (const fields of [
+    {
+      topic: "platform",
+      name: "Aluno",
+      contentId: "",
+      message: "A organização ajudou nos estudos.",
+    },
+    {
+      topic: "content",
+      contentId: "demo-html",
+      name: "",
+      message: "Este material foi muito útil para aprender.",
+    },
+  ]) {
+    const sent = await post("/feedback", fields, -1, false);
+    assert.match(await sent.text(), /Comentário enviado/);
+  }
+  assert.equal(await db.studentFeedback.count(), 2);
+  const invalidFeedback = await post(
+    "/feedback",
+    {
+      topic: "content",
+      contentId: "absent",
+      message: "Um comentário para conteúdo inexistente.",
+    },
+    -1,
+    false,
+  );
+  assert.match(
+    await invalidFeedback.text(),
+    /Este conteúdo não está disponível/,
+  );
+  const shortFeedback = await post(
+    "/feedback",
+    { topic: "platform", message: "oi" },
+    -1,
+    false,
+  );
+  assert.match(await shortFeedback.text(), /pelo menos 10 caracteres/);
+  for (let i = 0; i < 3; i++) {
+    const limited = await post(
+      "/feedback",
+      { topic: "platform", message: "Mais uma sugestão para melhorar." },
+      -1,
+      false,
+    );
+    if (i === 2) assert.match(await limited.text(), /Muitos envios/);
+  }
+  assert.equal(await db.studentFeedback.count(), 4);
   let response = await post("/admin/login", {
     email: "test@example.test",
     password: "incorrect",
@@ -148,6 +201,10 @@ try {
   assert.match(setCookie, /SameSite=lax/i);
   cookie = setCookie.split(";")[0];
   assert.equal((await get("/admin")).status, 200);
+  assert.match(
+    await (await get("/admin/feedback")).text(),
+    /A organização ajudou nos estudos/,
+  );
   response = await post("/admin/categorias/novo", {
     name: "Teste HTTP",
     description: "Categoria temporária",

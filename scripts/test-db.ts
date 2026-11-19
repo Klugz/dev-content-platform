@@ -107,8 +107,8 @@ try {
   );
   const tables = await db.$queryRaw<
     { relrowsecurity: boolean }[]
-  >`SELECT relrowsecurity FROM pg_class WHERE relname IN ('Admin','Session','Content','Trail','Category','Settings','LoginAttempt','SeedRun','TrailStep')`;
-  assert.equal(tables.length, 9);
+  >`SELECT relrowsecurity FROM pg_class WHERE relname IN ('Admin','Session','Content','Trail','Category','Settings','LoginAttempt','SeedRun','TrailStep','StudentFeedback')`;
+  assert.equal(tables.length, 10);
   assert.ok(tables.every((t) => t.relrowsecurity));
   console.log(
     "PASS: migrations, seed idempotency, preserved edits/deletions, curated import and category reuse, foreign keys, cascade, RLS.",

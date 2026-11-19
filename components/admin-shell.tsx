@@ -6,6 +6,7 @@ import {
   Route,
   Settings,
   LogOut,
+  MessageSquare,
 } from "lucide-react";
 import { logout } from "@/app/admin/actions";
 import { requireAdmin } from "@/lib/auth";
@@ -21,6 +22,7 @@ export async function AdminShell({ children }: { children: React.ReactNode }) {
             ["/admin/conteudos", "Conteúdos", FileText],
             ["/admin/categorias", "Categorias", Folder],
             ["/admin/trilhas", "Trilhas", Route],
+            ["/admin/feedback", "Feedback", MessageSquare],
             ["/admin/configuracoes", "Configurações", Settings],
           ].map(([href, label, Icon]) => {
             const I = Icon as typeof FileText;
